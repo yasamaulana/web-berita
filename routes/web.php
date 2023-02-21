@@ -17,23 +17,7 @@ use Inertia\Inertia;
 |
 */
 
-// Route::get('/', function () {
-//     return Inertia::render('Welcome', [
-//         'canLogin' => Route::has('login'),
-//         'canRegister' => Route::has('register'),
-//         'laravelVersion' => Application::VERSION,
-//         'phpVersion' => PHP_VERSION,
-//     ]);
-// });
-
 Route::get('/', [NewsController::class, 'index']);
-
-// Route::get('/', function () {
-//     return Inertia::render('Homepage', [
-//         'title' => 'Website Yasa',
-//         'deskripsi' => 'Iki mencoba coy'
-//     ]);
-// });
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
