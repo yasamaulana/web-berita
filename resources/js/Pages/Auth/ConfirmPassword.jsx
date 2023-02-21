@@ -28,36 +28,39 @@ export default function ConfirmPassword() {
     };
 
     return (
-        <GuestLayout>
+        <div className='min-h-screen flex flex-col sm:justify-center items-center bg-slate-900'>
             <Head title="Confirm Password" />
 
-            <div className="mb-4 text-sm text-gray-600">
-                This is a secure area of the application. Please confirm your password before continuing.
+
+            <div className="card w-96 bg-white p-5 shadow-xl">
+                <p className="text-center text-3xl font-bold mb-4 text-black">Confirm Password</p>
+                <div className="mb-4 text-sm text-gray-600">
+                    This is a secure area of the application. Please confirm your password before continuing.
+                </div>
+                <form onSubmit={submit}>
+                    <div className="mt-4">
+                        <InputLabel forInput="password" value="Password" />
+
+                        <TextInput
+                            id="password"
+                            type="password"
+                            name="password"
+                            value={data.password}
+                            className="mt-1 block w-full"
+                            isFocused={true}
+                            handleChange={onHandleChange}
+                        />
+
+                        <InputError message={errors.password} className="mt-2" />
+                    </div>
+
+                    <div className="flex items-center justify-end mt-4">
+                        <PrimaryButton className="ml-4" processing={processing}>
+                            Confirm
+                        </PrimaryButton>
+                    </div>
+                </form>
             </div>
-
-            <form onSubmit={submit}>
-                <div className="mt-4">
-                    <InputLabel forInput="password" value="Password" />
-
-                    <TextInput
-                        id="password"
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        className="mt-1 block w-full"
-                        isFocused={true}
-                        handleChange={onHandleChange}
-                    />
-
-                    <InputError message={errors.password} className="mt-2" />
-                </div>
-
-                <div className="flex items-center justify-end mt-4">
-                    <PrimaryButton className="ml-4" processing={processing}>
-                        Confirm
-                    </PrimaryButton>
-                </div>
-            </form>
-        </GuestLayout>
+        </div>
     );
 }

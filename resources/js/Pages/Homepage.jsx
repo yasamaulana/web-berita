@@ -9,7 +9,7 @@ export default function Jajal(props) {
     return (
         <div className="bg-slate-100">
             <Head title={props.title} />
-            <Navbar />
+            <Navbar user={props.auth.user} />
             <div className="mt-4 flex justify-center flex-col lg:flex-row lg:flex-wrap lg:items-stretch items-center gap-4">
                 <Newslist news={props.news.data} />
             </div>
